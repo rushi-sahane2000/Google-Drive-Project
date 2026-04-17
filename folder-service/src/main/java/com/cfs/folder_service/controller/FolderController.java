@@ -3,6 +3,7 @@ package com.cfs.folder_service.controller;
 import com.cfs.folder_service.model.FolderEntity;
 import com.cfs.folder_service.repository.FolderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class FolderController {
 
     @Autowired
     private FolderRepository folderRepository;
+
 
     @GetMapping
     public List<FolderEntity>  getAllFolders()

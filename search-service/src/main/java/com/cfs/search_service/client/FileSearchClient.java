@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "File-service",url = "http://localhost:8081")
+@FeignClient(name = "File-service",url = "http://localhost:8081",fallback = FileServiceFallback.class)
 public interface FileSearchClient {
 
     @GetMapping("/api/files")
@@ -16,3 +16,4 @@ public interface FileSearchClient {
     @GetMapping("/api/files/folders/{folderId}")
     List<Map<String,Object>> getAllFolders(@PathVariable Long folderId);
 }
+
